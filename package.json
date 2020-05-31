@@ -1,0 +1,53 @@
+{
+  "name": "grf-loader",
+  "version": "0.0.1",
+  "description": "A loader for GRF files (Ragnarok Online game file)",
+  "main": "./dist/cjs/grf-loader.js",
+  "module": "./dist/esm/grf-loader.js",
+  "browser": {
+    "./dist/cjs/grf-loader.js": "./dist/umd/grf-loader.js"
+  },
+  "files": [
+    "dist/",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "tsc --noEmit",
+    "build": "rollup -c"
+  },
+  "author": "Vincent Thibault <vthibault.mobile@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vthibault/grf-loader/issues"
+  },
+  "repository": "github:vthibault/grf-loader",
+  "keywords": [
+    "grf",
+    "grf-loader",
+    "grf-parser",
+    "grf-reader",
+    "ro",
+    "ragnarok",
+    "ragnarok-online"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "@rollup/plugin-typescript": "^4.1.2",
+    "@types/jdataview": "^0.0.31",
+    "@types/jest": "^25.2.3",
+    "@types/pako": "^1.0.1",
+    "babel-jest": "^26.0.1",
+    "jest": "^26.0.1",
+    "prettier": "2.0.5",
+    "rollup": "^2.12.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "jdataview": "^2.5.0",
+    "pako": "^1.0.11"
+  }
+}
