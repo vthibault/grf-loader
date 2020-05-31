@@ -7,10 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Run linter
-      run: yarn lint
+      - name: install
+        run: yarn install
 
-    - name: Run tests
-      run: yarn test
+      - name: Run linter
+        run: yarn lint
+
+      - name: Run tests
+        run: yarn test
