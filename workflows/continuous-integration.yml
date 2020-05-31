@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   lint:
-    name: run linter
+    name: run lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
