@@ -2,8 +2,8 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "lib": ["es2015", "es2017", "esnext", "dom"]
+    "lib": ["es2015", "es2017", "esnext", "dom"],
+    "types": ["jest", "node"]
   },
-  "types": ["jest", "node"],
   "exclude": ["__tests__"]
 }
