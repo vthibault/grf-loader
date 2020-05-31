@@ -38,7 +38,6 @@
     "@rollup/plugin-typescript": "^4.1.2",
     "@types/jdataview": "^0.0.31",
     "@types/jest": "^25.2.3",
-    "@types/node": "^14.0.6",
     "@types/pako": "^1.0.1",
     "babel-jest": "^26.0.1",
     "jest": "^26.0.1",

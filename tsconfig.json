@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
     "esModuleInterop": true
-  },
-  "exclude": ["__tests__"]
+  }
 }
