@@ -2,5 +2,6 @@
   "compilerOptions": {
     "esModuleInterop": true
   },
-  "types": ["jest"]
+  "types": ["jest"],
+  "exclude": ["__tests__"]
 }
