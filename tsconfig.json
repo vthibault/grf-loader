@@ -1,15 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "lib": ["es2015", "es2017", "esnext", "dom"],
-    "types": ["jest", "node"],
-    "typeRoots": ["node_modules/@types"],
-    "baseUrl": "./src",
-    "paths": {
-      "*": ["node_modules/*", "./*"]
-    }
+    "esModuleInterop": true
   },
-  "exclude": ["__tests__", "node_modules", "coverage", "dist"]
+  "exclude": ["__tests__"]
 }
