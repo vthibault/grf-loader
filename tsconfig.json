@@ -4,6 +4,6 @@
     "esModuleInterop": true,
     "lib": ["es2015", "es2017", "esnext", "dom"]
   },
-  "types": ["jest"],
+  "types": ["jest", "node"],
   "exclude": ["__tests__"]
 }
