@@ -2,7 +2,7 @@ import {inflate} from 'pako';
 import jDataview from 'jdataview';
 import {decodeFull, decodeHeader} from './des';
 
-interface TFileEntry {
+export interface TFileEntry {
   type: number;
   offset: number;
   realSize: number;
