@@ -1,8 +1,20 @@
 import {resolve} from 'path';
 import {openSync} from 'fs';
-import {GrfNode} from './../src/grf-node';
+import {GrfNode} from '../src/grf-node';
 
 describe('GRFNode', () => {
+  it('Should not load invalid fd', async () => {
+    let error = '';
+    try {
+      const fd = 0;
+      const grf = new GrfNode(fd);
+      await grf.load();
+    } catch (e) {
+      error = e.message;
+    }
+    expect(error).toBeTruthy();
+  });
+
   it('Should not load corrupted file', async () => {
     let error = '';
     try {

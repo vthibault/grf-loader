@@ -1,9 +1,5 @@
 import {read} from 'fs';
-import {promisify} from 'util';
-import jDataview from 'jdataview';
 import {GrfBase} from './grf-base';
-
-const readP = promisify(read);
 
 /**
  * Using this Node env, we work from a fd object.
@@ -23,7 +19,11 @@ export class GrfNode extends GrfBase<number> {
   ): Promise<Buffer> {
     const buffer = Buffer.alloc(length);
 
-    await readP(fd, buffer, 0, length, offset);
+    await new Promise((resolve, reject) =>
+      read(fd, buffer, 0, length, offset, (error) =>
+        error ? reject(error) : resolve()
+      )
+    );
 
     return buffer;
   }

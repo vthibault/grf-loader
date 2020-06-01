@@ -4,6 +4,7 @@
   "description": "A loader for GRF files (Ragnarok Online game file)",
   "main": "./dist/cjs/grf-loader.js",
   "module": "./dist/esm/grf-loader.js",
+  "sideEffects": false,
   "browser": {
     "./dist/cjs/grf-loader.js": "./dist/umd/grf-loader.js"
   },
@@ -14,7 +15,7 @@
   "scripts": {
     "test": "jest",
     "lint": "tsc --noEmit",
-    "build": "rollup -c"
+    "build": "del dist && rollup -c"
   },
   "author": "Vincent Thibault <vthibault.mobile@gmail.com>",
   "license": "MIT",
@@ -23,10 +24,12 @@
   },
   "repository": "github:vthibault/grf-loader",
   "keywords": [
-    "grf",
     "grf-loader",
     "grf-parser",
     "grf-reader",
+    "grf",
+    "loader",
+    "reader",
     "ro",
     "ragnarok",
     "ragnarok-online"
@@ -40,6 +43,7 @@
     "@types/jest": "^25.2.3",
     "@types/pako": "^1.0.1",
     "babel-jest": "^26.0.1",
+    "del-cli": "^3.0.1",
     "jest": "^26.0.1",
     "prettier": "2.0.5",
     "rollup": "^2.12.0",
