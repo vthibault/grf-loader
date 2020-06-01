@@ -5,15 +5,11 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-
       - name: install
-        run: yarn install
-
+        run: yarn
       - name: Run linter
         run: yarn lint
-
       - name: Run tests
         run: yarn test

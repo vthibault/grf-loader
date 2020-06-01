@@ -18,7 +18,7 @@ describe('GRFNode', () => {
   it('Should not load corrupted file', async () => {
     let error = '';
     try {
-      const fd = openSync(resolve(__dirname, 'data/corrupted.grf'), 'r');
+      const fd = openSync(resolve(__dirname, '../data/corrupted.grf'), 'r');
       const grf = new GrfNode(fd);
       await grf.load();
     } catch (e) {
@@ -30,7 +30,7 @@ describe('GRFNode', () => {
   it('Should not load non-grf file', async () => {
     let error = '';
     try {
-      const fd = openSync(resolve(__dirname, 'data/not-grf.grf'), 'r');
+      const fd = openSync(resolve(__dirname, '../data/not-grf.grf'), 'r');
       const grf = new GrfNode(fd);
       await grf.load();
     } catch (e) {
@@ -43,7 +43,7 @@ describe('GRFNode', () => {
     let error = '';
     try {
       const fd = openSync(
-        resolve(__dirname, 'data/incorrect-version.grf'),
+        resolve(__dirname, '../data/incorrect-version.grf'),
         'r'
       );
       const grf = new GrfNode(fd);
@@ -55,7 +55,7 @@ describe('GRFNode', () => {
   });
 
   it('Should load only once', async () => {
-    const fd = openSync(resolve(__dirname, 'data/with-files.grf'), 'r');
+    const fd = openSync(resolve(__dirname, '../data/with-files.grf'), 'r');
     const grf = new GrfNode(fd);
 
     // @ts-ignore
@@ -72,7 +72,7 @@ describe('GRFNode', () => {
   });
 
   it('Should load file list data', async () => {
-    const fd = openSync(resolve(__dirname, 'data/with-files.grf'), 'r');
+    const fd = openSync(resolve(__dirname, '../data/with-files.grf'), 'r');
     const grf = new GrfNode(fd);
     await grf.load();
 
@@ -152,7 +152,7 @@ describe('GRFNode', () => {
   });
 
   it('Should reject `getFile` if grf file not loaded', async () => {
-    const fd = openSync(resolve(__dirname, 'data/with-files.grf'), 'r');
+    const fd = openSync(resolve(__dirname, '../data/with-files.grf'), 'r');
     const grf = new GrfNode(fd);
     const {data, error} = await grf.getFile('raw');
 
@@ -161,7 +161,7 @@ describe('GRFNode', () => {
   });
 
   it('Should reject not found file', async () => {
-    const fd = openSync(resolve(__dirname, 'data/with-files.grf'), 'r');
+    const fd = openSync(resolve(__dirname, '../data/with-files.grf'), 'r');
     const grf = new GrfNode(fd);
     await grf.load();
     const {data, error} = await grf.getFile('notfound');
@@ -171,7 +171,7 @@ describe('GRFNode', () => {
   });
 
   it('Should not load folder file', async () => {
-    const fd = openSync(resolve(__dirname, 'data/with-files.grf'), 'r');
+    const fd = openSync(resolve(__dirname, '../data/with-files.grf'), 'r');
     const grf = new GrfNode(fd);
     await grf.load();
     const {data, error} = await grf.getFile('folder');
@@ -181,7 +181,7 @@ describe('GRFNode', () => {
   });
 
   it('Should reject corrupted files inside grf', async () => {
-    const fd = openSync(resolve(__dirname, 'data/with-files.grf'), 'r');
+    const fd = openSync(resolve(__dirname, '../data/with-files.grf'), 'r');
     const grf = new GrfNode(fd);
     await grf.load();
     const {data, error} = await grf.getFile('corrupted');
@@ -191,7 +191,7 @@ describe('GRFNode', () => {
   });
 
   it('Should load the file without compression and encryption', async () => {
-    const fd = openSync(resolve(__dirname, 'data/with-files.grf'), 'r');
+    const fd = openSync(resolve(__dirname, '../data/with-files.grf'), 'r');
     const grf = new GrfNode(fd);
     await grf.load();
 
@@ -205,7 +205,7 @@ describe('GRFNode', () => {
   });
 
   it('Should load the file with compression and no encryption', async () => {
-    const fd = openSync(resolve(__dirname, 'data/with-files.grf'), 'r');
+    const fd = openSync(resolve(__dirname, '../data/with-files.grf'), 'r');
     const grf = new GrfNode(fd);
     await grf.load();
 
@@ -219,7 +219,7 @@ describe('GRFNode', () => {
   });
 
   it('Should load the file with partial encryption', async () => {
-    const fd = openSync(resolve(__dirname, 'data/with-files.grf'), 'r');
+    const fd = openSync(resolve(__dirname, '../data/with-files.grf'), 'r');
     const grf = new GrfNode(fd);
     await grf.load();
 
@@ -233,7 +233,7 @@ describe('GRFNode', () => {
   });
 
   it('Should load the file with full encryption', async () => {
-    const fd = openSync(resolve(__dirname, 'data/with-files.grf'), 'r');
+    const fd = openSync(resolve(__dirname, '../data/with-files.grf'), 'r');
     const grf = new GrfNode(fd);
     await grf.load();
 
@@ -247,7 +247,7 @@ describe('GRFNode', () => {
   });
 
   it('Should load big file with full encryption', async () => {
-    const fd = openSync(resolve(__dirname, 'data/with-files.grf'), 'r');
+    const fd = openSync(resolve(__dirname, '../data/with-files.grf'), 'r');
     const grf = new GrfNode(fd);
     await grf.load();
 
