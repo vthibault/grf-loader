@@ -5,6 +5,7 @@
 [![roBrowser project](https://img.shields.io/badge/project-roBrowser-informational.svg)](https://github.com/vthibault/roBrowser)
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 ![License: MIT](https://img.shields.io/badge/speed-blazing%20%F0%9F%94%A5-brightgreen.svg?style=flat-square)
+
 ![node](https://github.com/vthibault/grf-loader/workflows/node/badge.svg?branch=master)
 ![browser](https://github.com/vthibault/grf-loader/workflows/browser/badge.svg?branch=master)
 ![lint](https://github.com/vthibault/grf-loader/workflows/lint/badge.svg?branch=master)
