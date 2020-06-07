@@ -1,11 +1,10 @@
-name: Test
+name: Linter
 
 on:
   push:
 
 jobs:
   lint:
-    name: Linter
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
