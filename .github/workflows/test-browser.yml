@@ -1,0 +1,21 @@
+name: Test Browser
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    name: Test Browser build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Run browser tests
+        run: yarn test:browser

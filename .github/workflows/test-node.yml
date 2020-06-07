@@ -1,0 +1,21 @@
+name: Test Node
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    name: Test Node build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Run node tests
+        run: yarn test:node
