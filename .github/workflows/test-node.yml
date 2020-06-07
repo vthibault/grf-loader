@@ -1,10 +1,10 @@
-name: Test Node
+name: node
 
 on:
   push:
 
 jobs:
-  tests:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
