@@ -1,11 +1,11 @@
-name: Test Node
+name: Test
 
 on:
   push:
 
 jobs:
   tests:
-    name: Test Node build
+    name: Node build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

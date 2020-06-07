@@ -1,11 +1,11 @@
-name: Test Browser
+name: Test
 
 on:
   push:
 
 jobs:
   tests:
-    name: Test Browser build
+    name: Browser build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
