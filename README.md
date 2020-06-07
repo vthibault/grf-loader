@@ -12,11 +12,11 @@
 
 ## About
 
-- 📚Only supports GRF version 0x200.
-- 🦾It's working both on node and browser environments
-- 🔐Supports DES description.
-- ✨Avoid bloating client/server memory _(by not loading the whole file into the RAM)_
-- ❌Does not supports custom encryption
+- 📚 Only supports GRF version 0x200.
+- 🦾 It's working both on node and browser environments
+- 🔐 Supports DES description.
+- ✨ Avoid bloating client/server memory _(by not loading the whole file into the RAM)_
+- ❌ Does not supports custom encryption
 
 ## Installation
 
