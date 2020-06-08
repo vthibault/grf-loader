@@ -1,5 +1,5 @@
 declare module 'grf-loader' {
-  interface TFileEntry {
+  export interface TFileEntry {
     type: number;
     offset: number;
     realSize: number;
@@ -14,7 +14,9 @@ declare module 'grf-loader' {
     loaded: boolean;
     files: Map<string, TFileEntry>;
     load(): Promise<void>;
-    getFile(filename: string): Promise<Uint8Array>;
+    getFile(
+      filename: string
+    ): Promise<{data: null | Uint8Array; error: null | string}>;
   }
 
   export const GrfBrowser: Grf<File | Blob>;
