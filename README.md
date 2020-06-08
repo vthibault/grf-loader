@@ -1,17 +1,17 @@
 # GRF Loader
 
-**GRF** is an archive fileformat that support lossless data compression used on **Ragnarok Online** to store game assets. A GRF file may contain one or more files or directories that may have been compressed (deflate) and encrypted (variant of DES).
+**GRF** is an archive file format that support lossless data compression used on **Ragnarok Online** to store game assets. A GRF file may contain one or more files or directories that may have been compressed (deflate) and encrypted (variant of DES).
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
-[![File size](https://img.shields.io/badge/Project-roBrowser-informational.svg)](https://github.com/vthibault/roBrowser)
+[![roBrowser project](https://img.shields.io/badge/project-roBrowser-informational.svg)](https://github.com/vthibault/roBrowser) [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+![node](https://github.com/vthibault/grf-loader/workflows/node/badge.svg?branch=master) ![browser](https://github.com/vthibault/grf-loader/workflows/browser/badge.svg?branch=master) ![lint](https://github.com/vthibault/grf-loader/workflows/lint/badge.svg?branch=master)
 
 ## About
 
-- 📚Only supports GRF version 0x200.
-- 🦾It's working both on node and browser environments
-- 🔐Supports DES description.
-- ✨Avoid bloating client/server memory _(by not loading the whole file into the RAM)_
-- ❌Does not supports custom encryption
+- 📚 Only supports GRF version 0x200.
+- 🦾 It's working both on node and browser environments
+- 🔐 Supports DES description.
+- ✨ Avoid bloating client/server memory _(by not loading the whole file into the RAM)_
+- ❌ Does not supports custom encryption
 
 ## Installation
 
