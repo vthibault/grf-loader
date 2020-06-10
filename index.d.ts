@@ -19,6 +19,6 @@ declare module 'grf-loader' {
     ): Promise<{data: null | Uint8Array; error: null | string}>;
   }
 
-  export const GrfBrowser: Grf<File | Blob>;
-  export const GrfNode: Grf<number>;
+  export class GrfBrowser extends Grf<File | Blob> {}
+  export class GrfNode extends Grf<number> {}
 }
