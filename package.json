@@ -1,6 +1,6 @@
 {
   "name": "grf-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A loader for GRF files (Ragnarok Online game file)",
   "main": "./dist/cjs/grf-loader.js",
   "module": "./dist/esm/grf-loader.js",
