@@ -99,13 +99,18 @@ export abstract class GrfBase<T> {
       p++;
 
       // prettier-ignore
-      this.files.set(filename.toLowerCase(), {
+      const entry: TFileEntry = {
         compressedSize: data[p++] | (data[p++] << 8) | (data[p++] << 16) | (data[p++] << 24),
         lengthAligned: data[p++] | (data[p++] << 8) | (data[p++] << 16) | (data[p++] << 24),
         realSize: data[p++] | (data[p++] << 8) | (data[p++] << 16) | (data[p++] << 24),
         type: data[p++],
         offset: data[p++] | (data[p++] << 8) | (data[p++] << 16) | (data[p++] << 24)
-      });
+      };
+
+      // Not a file (folder ?)
+      if (entry.type & FILELIST_TYPE_FILE) {
+        this.files.set(filename.toLowerCase(), entry);
+      }
     }
   }
 
@@ -143,14 +148,6 @@ export abstract class GrfBase<T> {
     }
 
     const entry = this.files.get(path);
-
-    // Not a file (folder ?)
-    if (!(entry.type & FILELIST_TYPE_FILE)) {
-      return Promise.resolve({
-        data: null,
-        error: `File "${path}" is a directory`
-      });
-    }
 
     const data = await this.getStreamBuffer(
       this.fd,

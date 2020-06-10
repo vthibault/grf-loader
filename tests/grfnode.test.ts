@@ -79,16 +79,6 @@ describe('GRFNode', () => {
     expect(grf.fileCount).toBe(7);
     expect(Array.from(grf.files)).toEqual([
       [
-        'folder',
-        {
-          compressedSize: 0,
-          lengthAligned: 0,
-          realSize: 0,
-          type: 0,
-          offset: 0
-        }
-      ],
-      [
         'raw',
         {
           compressedSize: 74,
@@ -175,9 +165,8 @@ describe('GRFNode', () => {
     const grf = new GrfNode(fd);
     await grf.load();
     const {data, error} = await grf.getFile('folder');
-
     expect(data).toBe(null);
-    expect(error).toBe('File "folder" is a directory');
+    expect(error).toBe('File "folder" not found');
   });
 
   it('Should reject corrupted files inside grf', async () => {
