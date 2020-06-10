@@ -1,14 +1,16 @@
 import {GrfBrowser} from '../../src/grf-browser';
 
-const getGrfBlob = (name: string) => 
+const getGrfBlob = (name: string) =>
   new Cypress.Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', `/data/${name}`);
     xhr.responseType = 'arraybuffer';
     xhr.onload = () => {
-      resolve(new Blob([xhr.response], {
-        type: 'application/octet-stream'
-      }));
+      resolve(
+        new Blob([xhr.response], {
+          type: 'application/octet-stream'
+        })
+      );
     };
     xhr.onerror = reject;
     xhr.send(null);
@@ -78,16 +80,6 @@ describe('GRFBrowser', () => {
 
     expect(grf.fileCount).to.eq(7);
     expect(Array.from(grf.files)).to.deep.eq([
-      [
-        'folder',
-        {
-          compressedSize: 0,
-          lengthAligned: 0,
-          realSize: 0,
-          type: 0,
-          offset: 0
-        }
-      ],
       [
         'raw',
         {
@@ -177,7 +169,7 @@ describe('GRFBrowser', () => {
     const {data, error} = await grf.getFile('folder');
 
     expect(data).to.eq(null);
-    expect(error).to.eq('File "folder" is a directory');
+    expect(error).to.eq('File "folder" not found');
   });
 
   it('Should reject corrupted files inside grf', async () => {
@@ -259,4 +251,4 @@ describe('GRFBrowser', () => {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis bibendum venenatis. Aliquam quis velit urna. Suspendisse nec posuere sem. Donec risus quam, vulputate sed augue ultricies, dignissim hendrerit purus. Nulla euismod dolor enim, vel fermentum ex ultricies ac. Donec aliquet vehicula egestas. Sed accumsan velit ac mauris porta, id imperdiet purus aliquam. Phasellus et faucibus erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque vel nisl efficitur, euismod augue eu, consequat dui. Maecenas vestibulum tortor purus, egestas posuere tortor imperdiet eget. Nulla sit amet placerat diam.'
     );
   });
-})
+});

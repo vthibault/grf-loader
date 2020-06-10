@@ -7,11 +7,11 @@
 
 ## About
 
-- 📚 Only supports GRF version 0x200.
-- 🦾 It's working both on node and browser environments
-- 🔐 Supports DES description.
-- ✨ Avoid bloating client/server memory _(by not loading the whole file into the RAM)_
-- ❌ Does not supports custom encryption
+- Only supports GRF version 0x200.
+- It's working both on node and browser environments
+- Supports DES description.
+- Avoid bloating client/server memory _(by not loading the whole file into the RAM)_
+- Does not supports custom encryption
 
 ## Installation
 
@@ -67,6 +67,7 @@ Once the GRF is loaded, it's possible to extract all files you need
 
 ```ts
 const {data, error} = await grf.getFile('data\\clientinfo.xml');
+
 // data is a Uint8Array data, so we transform it into text
 const content = String.fromCharCode.apply(null, data);
 console.log(content);
