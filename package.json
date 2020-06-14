@@ -47,7 +47,6 @@
     "@types/pako": "^1.0.1",
     "babel-jest": "^26.0.1",
     "cypress": "^4.7.0",
-    "cypress-file-upload": "^4.0.7",
     "del-cli": "^3.0.1",
     "jest": "^26.0.1",
     "prettier": "2.0.5",
@@ -58,5 +57,11 @@
   "dependencies": {
     "jdataview": "^2.5.0",
     "pako": "^1.0.11"
+  },
+  "jest": {
+    "clearMocks": true,
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "testEnvironment": "node"
   }
 }

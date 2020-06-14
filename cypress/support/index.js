@@ -14,5 +14,3 @@
 // ***********************************************************
 
 // Alternatively you can use CommonJS syntax:
-
-import 'cypress-file-upload';
